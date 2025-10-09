@@ -13,5 +13,11 @@ import "../interfaces/IMetadataRenderer.sol";
  * @title OneOfOneNFTs
  * @dev NFT contract that changes metadata based on external data sources
  */
-contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {}
+contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
+
+        // Core interfaces
+    IDataOracle public weatherOracle;
+    IDataOracle public timeOracle;
+    IMetadataRenderer public metadataRenderer;
+}
     
