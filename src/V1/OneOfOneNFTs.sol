@@ -19,6 +19,17 @@ contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
     IDataOracle public timeOracle;
     IMetadataRenderer public metadataRenderer;
 
+    // NFT State Management
+    struct NFTState {
+        uint256 lastWeatherUpdate;
+        uint256 lastTimeUpdate;
+        uint256 userActionCount;
+        string currentWeather;
+        string currentTimeOfDay;
+        address owner;
+        uint256 createdAt;
+    }
+    
     constructor(address _weatherOracle, address _timeOracle, address _metadataRenderer)
         ERC721("Dynamic Weather NFT", "DYNFT")
     {
@@ -35,7 +46,7 @@ contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
         
         return metadataRenderer.renderMetadata(tokenId, nftStates[tokenId]);
     }
-    
+
     function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721URIStorage) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
