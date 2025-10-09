@@ -13,5 +13,5 @@ import "@openzeppelin/contracts/utils/Strings.sol";
  * @title OneOfOneNFTs
  * @dev NFT contract that changes metadata based on external data sources
  */
-contract OneOfOneNFTs {}
+contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {}
     
