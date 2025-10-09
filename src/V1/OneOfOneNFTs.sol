@@ -19,5 +19,15 @@ contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
     IDataOracle public weatherOracle;
     IDataOracle public timeOracle;
     IMetadataRenderer public metadataRenderer;
+
+    constructor(
+        address _weatherOracle,
+        address _timeOracle,
+        address _metadataRenderer
+    ) ERC721("Dynamic Weather NFT", "DYNFT") {
+        weatherOracle = IDataOracle(_weatherOracle);
+        timeOracle = IDataOracle(_timeOracle);
+        metadataRenderer = IMetadataRenderer(_metadataRenderer);
+    }
 }
     
