@@ -14,6 +14,10 @@ import "../interfaces/IMetadataRenderer.sol";
  * @dev NFT contract that changes metadata based on external data sources
  */
 contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
+    using Strings for uint256;
+
+    uint256 private _tokenIdCounter;
+
     // Core interfaces
     IDataOracle public weatherOracle;
     IDataOracle public timeOracle;
@@ -30,9 +34,9 @@ contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
         uint256 createdAt;
     }
 
-        // Storage
+    // Storage
     mapping(uint256 => NFTState) public nftStates;
-    
+
     constructor(address _weatherOracle, address _timeOracle, address _metadataRenderer)
         ERC721("Dynamic Weather NFT", "DYNFT")
     {
@@ -46,7 +50,7 @@ contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
      */
     function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
         require(_exists(tokenId), "Token does not exist");
-        
+
         return metadataRenderer.renderMetadata(tokenId, nftStates[tokenId]);
     }
 
