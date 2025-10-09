@@ -9,5 +9,9 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 //import "./interfaces/IDataOracle.sol";
 //import "./interfaces/IMetadataRenderer.sol";
 
+/**
+ * @title OneOfOneNFTs
+ * @dev NFT contract that changes metadata based on external data sources
+ */
 contract OneOfOneNFTs {}
     
