@@ -26,4 +26,8 @@ contract OneOfOneNFTs is ERC721, ERC721URIStorage, Ownable {
         timeOracle = IDataOracle(_timeOracle);
         metadataRenderer = IMetadataRenderer(_metadataRenderer);
     }
+
+    function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721URIStorage) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
 }
