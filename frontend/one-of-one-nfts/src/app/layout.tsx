@@ -6,8 +6,8 @@ import './globals.css';
 import ContextProvider from '@/context'
 
 export const metadata: Metadata = {
-  title: "AppKit in Next.js + wagmi",
-  description: "AppKit example dApp",
+  title: "one-of-one-nfts",
+  description: "one of one nft mints",
 };
 
 export default async function RootLayout({
