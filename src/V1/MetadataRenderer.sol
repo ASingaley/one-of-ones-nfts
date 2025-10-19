@@ -10,7 +10,6 @@ import "../interfaces/IMetadataRenderer.sol";
  * @title MetadataRenderer
  * @dev Generates dynamic metadata and SVG images for NFTs based on their state
  */
-contract MetadataRenderer is IMetadataRenderer, Ownable{
-        using Strings for uint256;
-
+contract MetadataRenderer is IMetadataRenderer, Ownable {
+    using Strings for uint256;
 }
