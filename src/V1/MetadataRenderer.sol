@@ -13,8 +13,8 @@ import "../interfaces/IMetadataRenderer.sol";
 contract MetadataRenderer is IMetadataRenderer, Ownable {
     using Strings for uint256;
 
-        // Color schemes for different weather conditions
+    // Color schemes for different weather conditions
     mapping(string => string) public weatherColors;
-        mapping(string => string) public timeColors;
-        mapping(string => string) public weatherBackgrounds;
+    mapping(string => string) public timeColors;
+    mapping(string => string) public weatherBackgrounds;
 }
