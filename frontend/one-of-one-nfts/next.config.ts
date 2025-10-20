@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  basePath: '/one-of-ones-nfts',
+  images: {
+    unoptimized: true,
+  },
   webpack: config => {
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
     
