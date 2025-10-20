@@ -13,7 +13,7 @@ const queryClient = new QueryClient()
 const metadata = {
   name: 'one-of-one-nfts',
   description: 'one of one nft mints',
-  url: 'https://github.com/0xonerb/next-reown-appkit-ssr', // origin must match your domain & subdomain
+  url: 'https://andrewsing1.github.io/one-of-ones-nfts', // Updated to your GitHub Pages URL
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
@@ -33,7 +33,9 @@ export const modal = createAppKit({
 })
 
 function ContextProvider({ children, cookies }: { children: ReactNode; cookies: string | null }) {
-  const initialState = cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies)
+  // For static export, cookies will always be null, so initialState will be undefined
+  // This is fine - Wagmi will initialize from client-side storage instead
+  const initialState = cookies ? cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies) : undefined
 
   return (
     <WagmiProvider config={wagmiAdapter.wagmiConfig as Config} initialState={initialState}>
