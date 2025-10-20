@@ -17,4 +17,8 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
     mapping(string => string) public weatherColors;
     mapping(string => string) public timeColors;
     mapping(string => string) public weatherBackgrounds;
+
+    constructor() Ownable(msg.sender) {
+        _initializeColorSchemes();
+    }
 }
