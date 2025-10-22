@@ -22,5 +22,8 @@ contract TestOneOfOneNFTs is ERC721 {
         uint256 createdAt;
     }
 
+        // Storage
+    mapping(uint256 => NFTState) public nftStates;
+
         constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 }
