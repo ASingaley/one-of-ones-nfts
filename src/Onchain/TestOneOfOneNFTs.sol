@@ -10,4 +10,6 @@ import "@openzeppelin/contracts/utils/Strings.sol";
  */
 contract TestOneOfOneNFTs is ERC721 {
     using Strings for uint256;
+
+        constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 }
