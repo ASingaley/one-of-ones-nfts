@@ -14,7 +14,7 @@ contract TestOneOfOneNFTs is ERC721 {
     uint256 private _tokenIdCounter;
     uint256 private version = 0;
 
-        // Simplified NFT State
+    // Simplified NFT State
     struct NFTState {
         uint256 userActionCount;
         string currentWeather;
@@ -22,8 +22,8 @@ contract TestOneOfOneNFTs is ERC721 {
         uint256 createdAt;
     }
 
-        // Storage
+    // Storage
     mapping(uint256 => NFTState) public nftStates;
 
-        constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
+    constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 }
