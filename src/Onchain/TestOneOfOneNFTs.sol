@@ -25,5 +25,9 @@ contract TestOneOfOneNFTs is ERC721 {
     // Storage
     mapping(uint256 => NFTState) public nftStates;
 
+    // Events
+    event NFTMinted(uint256 indexed tokenId, address indexed owner);
+    event NFTUpdated(uint256 indexed tokenId, string updateType, string newValue);
+
     constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 }
