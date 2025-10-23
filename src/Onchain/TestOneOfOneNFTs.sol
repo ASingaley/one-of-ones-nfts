@@ -30,16 +30,9 @@ contract TestOneOfOneNFTs is ERC721 {
     event NFTUpdated(uint256 indexed tokenId, string updateType, string newValue);
 
     // Predefined weather and time options for testing
-    string[] private weatherOptions = [
-        "sunny",
-        "rainy",
-        "cloudy",
-        "snowy",
-        "foggy"
-    ];
+    string[] private weatherOptions = ["sunny", "rainy", "cloudy", "snowy", "foggy"];
 
-        string[] private timeOptions =
-        ["morning", "afternoon", "evening", "night"];
+    string[] private timeOptions = ["morning", "afternoon", "evening", "night"];
 
     constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 
@@ -64,7 +57,7 @@ contract TestOneOfOneNFTs is ERC721 {
         return tokenId;
     }
 
-        /**
+    /**
      * @dev Update weather - anyone can call for testing
      */
     function updateWeather(uint256 tokenId) external {
