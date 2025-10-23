@@ -37,6 +37,9 @@ contract TestOneOfOneNFTs is ERC721 {
         "snowy",
         "foggy"
     ];
-    
+
+        string[] private timeOptions =
+        ["morning", "afternoon", "evening", "night"];
+        
     constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 }
