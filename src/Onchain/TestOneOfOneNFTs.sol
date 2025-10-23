@@ -140,4 +140,11 @@ contract TestOneOfOneNFTs is ERC721 {
         require(_ownerOf(tokenId) != address(0), "Token does not exist");
         return nftStates[tokenId];
     }
+
+    /**
+     * @dev Get total supply
+     */
+    function totalSupply() external view returns (uint256) {
+        return _tokenIdCounter;
+    }
 }
