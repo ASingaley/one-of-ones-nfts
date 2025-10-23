@@ -13,7 +13,7 @@ export const networks = [base, celo, mainnet, arbitrum] as [AppKitNetwork, ...Ap
 
 //Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
-  ssr: true,
+  ssr: false,
   projectId,
   networks
 })

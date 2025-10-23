@@ -1,3 +1,4 @@
+// ./src/context/index.tsx
 'use client'
 
 import { wagmiAdapter, projectId, networks } from '@/config'
@@ -13,7 +14,7 @@ const queryClient = new QueryClient()
 const metadata = {
   name: 'one-of-one-nfts',
   description: 'one of one nft mints',
-  url: 'https://andrewsing1.github.io/one-of-ones-nfts', // Updated to your GitHub Pages URL
+  url: 'https://andrewsing1.github.io', // Origin only for compatibility
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
@@ -25,16 +26,16 @@ export const modal = createAppKit({
   metadata,
   themeMode: 'light',
   features: {
-    analytics: true // Optional - defaults to your Cloud configuration
+    analytics: true
   },
   themeVariables: {
     '--w3m-accent': '#000000',
-  }
+  },
+  // Add allowUnsupportedChain if needed for custom networks
+  allowUnsupportedChain: true
 })
 
 function ContextProvider({ children, cookies }: { children: ReactNode; cookies: string | null }) {
-  // For static export, cookies will always be null, so initialState will be undefined
-  // This is fine - Wagmi will initialize from client-side storage instead
   const initialState = cookies ? cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies) : undefined
 
   return (
