@@ -29,5 +29,14 @@ contract TestOneOfOneNFTs is ERC721 {
     event NFTMinted(uint256 indexed tokenId, address indexed owner);
     event NFTUpdated(uint256 indexed tokenId, string updateType, string newValue);
 
+    // Predefined weather and time options for testing
+    string[] private weatherOptions = [
+        "sunny",
+        "rainy",
+        "cloudy",
+        "snowy",
+        "foggy"
+    ];
+    
     constructor() ERC721("Test OneOfOne NFTs", "TOOON") {}
 }
