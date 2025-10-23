@@ -63,4 +63,16 @@ contract TestOneOfOneNFTs is ERC721 {
         emit NFTMinted(tokenId, to);
         return tokenId;
     }
+
+        /**
+     * @dev Update weather - anyone can call for testing
+     */
+    function updateWeather(uint256 tokenId) external {
+        require(_ownerOf(tokenId) != address(0), "Token does not exist");
+
+        string memory newWeather = weatherOptions[_pseudoRandom(block.timestamp, "weather") % weatherOptions.length];
+        nftStates[tokenId].currentWeather = newWeather;
+
+        emit NFTUpdated(tokenId, "weather", newWeather);
+    }
 }
