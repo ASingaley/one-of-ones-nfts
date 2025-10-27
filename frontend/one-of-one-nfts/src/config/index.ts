@@ -9,11 +9,14 @@ if (!projectId) {
   throw new Error('Project ID is not defined')
 }
 
-export const networks = [base, celo, mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]]
+export const networks = [base, celo, mainnet, arbitrum]
 
-//Set up the Wagmi Adapter (Config)
+// Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
-  ssr: false,
+  storage: createStorage({
+    storage: cookieStorage
+  }),
+  ssr: true,
   projectId,
   networks
 })
