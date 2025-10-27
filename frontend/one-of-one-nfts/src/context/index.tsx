@@ -10,11 +10,11 @@ import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi'
 // Set up queryClient
 const queryClient = new QueryClient()
 
-// Set up metadata
+// Set up metadata - MUST match your GitHub Pages URL exactly
 const metadata = {
-  name: 'one-of-one-nfts',
-  description: 'one of one nft mints',
-  url: 'https://andrewsing1.github.io', // Origin only for compatibility
+  name: 'One of One NFTs',
+  description: 'Unique one-of-one NFT minting platform',
+  url: 'https://asingaley.github.io/one-of-ones-nfts',
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
@@ -26,12 +26,11 @@ export const modal = createAppKit({
   metadata,
   themeMode: 'light',
   features: {
-    analytics: true
+    analytics: false // Disable analytics to avoid 403 errors
   },
   themeVariables: {
     '--w3m-accent': '#000000',
   },
-  // Add allowUnsupportedChain if needed for custom networks
   allowUnsupportedChain: true
 })
 
