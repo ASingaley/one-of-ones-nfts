@@ -21,7 +21,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
     // Base SVG template parts
     string public constant SVG_HEADER =
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">';
-        string public constant SVG_FOOTER = "</svg>";
+    string public constant SVG_FOOTER = "</svg>";
 
     constructor() Ownable(msg.sender) {
         _initializeColorSchemes();
@@ -101,7 +101,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
         );
     }
 
-        /**
+    /**
      * @dev Generate background gradient
      */
     function _getBackgroundGradient(string memory weather, string memory timeOfDay)
@@ -127,7 +127,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
         );
     }
 
-        /**
+    /**
      * @dev Generate weather-specific visual element
      */
     function _getWeatherElement(string memory weather) internal pure returns (string memory) {
@@ -151,7 +151,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
         }
     }
 
-        /**
+    /**
      * @dev Generate time-specific visual element
      */
     function _getTimeElement(string memory timeOfDay) internal pure returns (string memory) {
@@ -170,7 +170,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
         }
     }
 
-        /**
+    /**
      * @dev Generate user action visual element
      */
     function _getActionElement(uint256 actionCount) internal pure returns (string memory) {
@@ -188,7 +188,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
         }
     }
 
-        /**
+    /**
      * @dev Generate token ID text
      */
     function _getTokenText(uint256 tokenId) internal pure returns (string memory) {
@@ -201,7 +201,7 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
         );
     }
 
-        /**
+    /**
      * @dev Generate JSON attributes array
      */
     function _generateAttributes(IMetadataRenderer.NFTState memory state) internal view returns (string memory) {
