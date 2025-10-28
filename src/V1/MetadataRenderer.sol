@@ -187,4 +187,17 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
             '<circle cx="50" cy="350" r="30" fill="red" /><text x="50" y="355" text-anchor="middle" fill="white" font-size="8">Super Active</text>';
         }
     }
+
+        /**
+     * @dev Generate token ID text
+     */
+    function _getTokenText(uint256 tokenId) internal pure returns (string memory) {
+        return string(
+            abi.encodePacked(
+                '<text x="200" y="380" text-anchor="middle" fill="white" font-size="14" font-weight="bold">#',
+                tokenId.toString(),
+                "</text>"
+            )
+        );
+    }
 }
