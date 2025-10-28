@@ -14,12 +14,12 @@ export default function Home() {
           <div className="nav-logo">
             <Image 
               src="/reown.svg" 
-              alt="OneOfOneNFTs" 
+              alt="AB System" 
               width={40} 
               height={40} 
               priority 
             />
-            <span className="logo-text">OneOfOneNFTs</span>
+            <span className="logo-text">AB System</span>
           </div>
           <div className="nav-actions">
             <ConnectButton />
@@ -44,11 +44,11 @@ export default function Home() {
           <h1 className="hero-title">
             Next-Generation
             <br />
-            <span className="gradient-text">OneOfOneNFTs Testing System</span>
+            <span className="gradient-text">A/B Testing System</span>
           </h1>
           
           <p className="hero-subtitle">
-            Leverage decentralized infrastructure for transparent, tamper-proof OneOfOneNFTs testing.
+            Leverage decentralized infrastructure for transparent, tamper-proof A/B testing.
             <br />
             Build trust with your users through verifiable on-chain experiments.
           </p>
@@ -83,9 +83,9 @@ export default function Home() {
       {/* Features Section */}
       <section className="features-section">
         <div className="section-header">
-          <h2 className="section-title">Why Choose OneOfOneNFTs?</h2>
+          <h2 className="section-title">Why Choose AB System?</h2>
           <p className="section-subtitle">
-            Combining the power of blockchain with modern OneOfOneNFTs testing methodologies
+            Combining the power of blockchain with modern A/B testing methodologies
           </p>
         </div>
 
@@ -157,7 +157,7 @@ export default function Home() {
         <div className="section-header">
           <h2 className="section-title">Try It Now</h2>
           <p className="section-subtitle">
-            Experience the power of decentralized OneOfOneNFTs testing
+            Experience the power of decentralized A/B testing
           </p>
         </div>
 
@@ -211,14 +211,14 @@ export default function Home() {
             <div className="footer-logo">
               <Image 
                 src="/reown.svg" 
-                alt="OneOfOneNFTs" 
+                alt="AB System" 
                 width={32} 
                 height={32} 
               />
-              <span className="logo-text">OneOfOneNFTs</span>
+              <span className="logo-text">AB System</span>
             </div>
             <p className="footer-tagline">
-              Decentralized OneOfOneNFTs for the Modern Web
+              Decentralized A/B Testing for the Modern Web
             </p>
           </div>
 
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2025 OneOfOneNFTs. Built with ❤️ using Web3 technology.</p>
+          <p>&copy; 2025 AB System. Built with ❤️ using Web3 technology.</p>
         </div>
       </footer>
     </div>
