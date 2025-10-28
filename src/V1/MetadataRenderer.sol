@@ -200,4 +200,26 @@ contract MetadataRenderer is IMetadataRenderer, Ownable {
             )
         );
     }
+
+        /**
+     * @dev Generate JSON attributes array
+     */
+    function _generateAttributes(IMetadataRenderer.NFTState memory state) internal view returns (string memory) {
+        return string(
+            abi.encodePacked(
+                '{"trait_type": "Weather", "value": "',
+                state.currentWeather,
+                '"},',
+                '{"trait_type": "Time of Day", "value": "',
+                state.currentTimeOfDay,
+                '"},',
+                '{"trait_type": "User Actions", "value": ',
+                state.userActionCount.toString(),
+                ', "display_type": "number"},',
+                '{"trait_type": "Age (Hours)", "value": ',
+                ((block.timestamp - state.createdAt) / 3600).toString(),
+                ', "display_type": "number"}'
+            )
+        );
+    }
 }
