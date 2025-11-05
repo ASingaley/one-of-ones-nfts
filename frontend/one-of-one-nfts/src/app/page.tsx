@@ -48,7 +48,7 @@ export default function Home() {
           </h1>
           
           <p className="hero-subtitle">
-            Experience Unique one-of-one NFTs that transform based on weather, time of day, and your interactions.
+            Experience Unique One Of One NFTs that transform based on weather, time of day, and your interactions.
             <br />
             Each piece is unique, alive, and stored permanently on-chain.
           </p>
@@ -63,7 +63,7 @@ export default function Home() {
 
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-value">Unique one-of-one</div>
+              <div className="stat-value">Dynamic</div>
               <div className="stat-label">Metadata</div>
             </div>
             <div className="stat-divider"></div>
@@ -146,7 +146,7 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Evolving Rarity</h3>
             <p className="feature-text">
-              Your NFT's rarity and characteristics evolve over time based on weather patterns, usage, and age.
+              Your NFT&apos;s rarity and characteristics evolve over time based on weather patterns, usage, and age.
             </p>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function Home() {
         <div className="section-header">
           <h2 className="section-title">Try It Now</h2>
           <p className="section-subtitle">
-            Connect your wallet and interact with dynamic NFTs
+            Connect your wallet and interact with unique one of one NFTs
           </p>
         </div>
 
@@ -193,7 +193,7 @@ export default function Home() {
       {/* How It Works Section */}
       <section className="features-section">
         <div className="section-header">
-          <h2 className="section-title">How Unique one-of-one NFTs Work</h2>
+          <h2 className="section-title">How Unique One Of One NFTs Work</h2>
           <p className="section-subtitle">
             Understanding the technology behind living digital art
           </p>
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Mint Your NFT</h3>
             <p className="feature-text">
-              Connect your wallet and mint a unique one-of-one NFT. Each token starts with initial weather and time conditions.
+              Connect your wallet and mint a unique One Of One NFT. Each token starts with initial weather and time conditions.
             </p>
           </div>
 
@@ -226,7 +226,7 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Interact & Evolve</h3>
             <p className="feature-text">
-              Perform user actions that increment counters and modify your NFT's state, creating a unique interaction history.
+              Perform user actions that increment counters and modify your NFT&apos;s state, creating a unique interaction history.
             </p>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function Home() {
         <div className="cta-content">
           <h2 className="cta-title">Ready to Own Living Art?</h2>
           <p className="cta-subtitle">
-            Connect your wallet and start collecting Unique one-of-one NFTs that evolve with the world around you
+            Connect your wallet and start collecting Unique One Of One NFTs that evolve with the world around you
           </p>
           <div className="cta-buttons">
             <ConnectButton />
@@ -260,7 +260,7 @@ export default function Home() {
               <span className="logo-text">One Of One NFTs</span>
             </div>
             <p className="footer-tagline">
-              Unique one-of-one NFTs That Respond to the Real World
+              Unique One Of One NFTs That Respond to the Real World
             </p>
           </div>
 
