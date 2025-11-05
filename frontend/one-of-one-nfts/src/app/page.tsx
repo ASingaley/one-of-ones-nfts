@@ -3,7 +3,7 @@ import { ConnectButton } from "@/components/ConnectButton";
 import { InfoList } from "@/components/InfoList";
 import { ActionButtonList } from "@/components/ActionButtonList";
 import { SignMessage } from "@/components/SignMessage";
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,12 +12,12 @@ export default function Home() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <Image 
-              src="/reown.svg" 
-              alt="One Of One NFTs" 
-              width={40} 
-              height={40} 
-              priority 
+            <Image
+              src="/reown.svg"
+              alt="One Of One NFTs"
+              width={40}
+              height={40}
+              priority
             />
             <span className="logo-text">One Of One NFTs</span>
           </div>
@@ -34,21 +34,22 @@ export default function Home() {
           <div className="gradient-orb orb-2"></div>
           <div className="gradient-orb orb-3"></div>
         </div>
-        
+
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-icon">🎨</span>
             <span>Living, Breathing Digital Art</span>
           </div>
-          
+
           <h1 className="hero-title">
             NFTs That Evolve
             <br />
             <span className="gradient-text">With Your World</span>
           </h1>
-          
+
           <p className="hero-subtitle">
-            Experience Unique One Of One NFTs that transform based on weather, time of day, and your interactions.
+            Experience Unique One Of One NFTs that transform based on weather,
+            time of day, and your interactions.
             <br />
             Each piece is unique, alive, and stored permanently on-chain.
           </p>
@@ -96,7 +97,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Weather-Reactive</h3>
             <p className="feature-text">
-              Your NFT transforms based on real-world weather conditions, creating unique visual experiences that match the environment.
+              Your NFT transforms based on real-world weather conditions,
+              creating unique visual experiences that match the environment.
             </p>
           </div>
 
@@ -106,7 +108,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Time-Aware</h3>
             <p className="feature-text">
-              Watch your NFT shift through morning, afternoon, evening, and night phases with distinct visual styles for each time period.
+              Watch your NFT shift through morning, afternoon, evening, and
+              night phases with distinct visual styles for each time period.
             </p>
           </div>
 
@@ -116,7 +119,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Interactive</h3>
             <p className="feature-text">
-              Perform actions that permanently affect your NFT's state and appearance, creating a unique history for each token.
+              Perform actions that permanently affect your NFT&apos;s state and
+              appearance, creating a unique history for each token.
             </p>
           </div>
 
@@ -126,7 +130,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Generated Art</h3>
             <p className="feature-text">
-              Every NFT features dynamically generated SVG artwork that updates in real-time based on multiple environmental factors.
+              Every NFT features dynamically generated SVG artwork that updates
+              in real-time based on multiple environmental factors.
             </p>
           </div>
 
@@ -136,7 +141,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Fully On-Chain</h3>
             <p className="feature-text">
-              All metadata and state changes are stored directly on the blockchain, ensuring permanence and true ownership.
+              All metadata and state changes are stored directly on the
+              blockchain, ensuring permanence and true ownership.
             </p>
           </div>
 
@@ -146,7 +152,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Evolving Rarity</h3>
             <p className="feature-text">
-              Your NFT&apos;s rarity and characteristics evolve over time based on weather patterns, usage, and age.
+              Your NFT&apos;s rarity and characteristics evolve over time based
+              on weather patterns, usage, and age.
             </p>
           </div>
         </div>
@@ -168,7 +175,8 @@ export default function Home() {
               <span className="demo-badge">Interactive</span>
             </div>
             <p className="demo-description">
-              Test wallet signing functionality to verify ownership and authorize actions
+              Test wallet signing functionality to verify ownership and
+              authorize actions
             </p>
             <div className="demo-content">
               <SignMessage />
@@ -206,7 +214,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Mint Your NFT</h3>
             <p className="feature-text">
-              Connect your wallet and mint a unique One Of One NFT. Each token starts with initial weather and time conditions.
+              Connect your wallet and mint a unique One Of One NFT. Each token
+              starts with initial weather and time conditions.
             </p>
           </div>
 
@@ -216,7 +225,8 @@ export default function Home() {
             </div>
             <h3 className="feature-title">Environmental Updates</h3>
             <p className="feature-text">
-              Update your NFT with current weather data or time of day. The visual appearance transforms based on these conditions.
+              Update your NFT with current weather data or time of day. The
+              visual appearance transforms based on these conditions.
             </p>
           </div>
 
@@ -224,9 +234,10 @@ export default function Home() {
             <div className="feature-icon-wrapper green">
               <span className="feature-icon">3️⃣</span>
             </div>
-            <h3 className="feature-title">Interact & Evolve</h3>
+            <h3 className="feature-title">Interact &amp; Evolve</h3>
             <p className="feature-text">
-              Perform user actions that increment counters and modify your NFT&apos;s state, creating a unique interaction history.
+              Perform user actions that increment counters and modify your
+              NFT&apos;s state, creating a unique interaction history.
             </p>
           </div>
         </div>
@@ -237,7 +248,8 @@ export default function Home() {
         <div className="cta-content">
           <h2 className="cta-title">Ready to Own Living Art?</h2>
           <p className="cta-subtitle">
-            Connect your wallet and start collecting Unique One Of One NFTs that evolve with the world around you
+            Connect your wallet and start collecting Unique One Of One NFTs that
+            evolve with the world around you
           </p>
           <div className="cta-buttons">
             <ConnectButton />
@@ -251,11 +263,11 @@ export default function Home() {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="footer-logo">
-              <Image 
-                src="/reown.svg" 
-                alt="One Of One NFTs" 
-                width={32} 
-                height={32} 
+              <Image
+                src="/reown.svg"
+                alt="One Of One NFTs"
+                width={32}
+                height={32}
               />
               <span className="logo-text">One Of One NFTs</span>
             </div>
