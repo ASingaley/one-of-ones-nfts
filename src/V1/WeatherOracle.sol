@@ -11,6 +11,13 @@ import "../interfaces/IDataOracle.sol";
  * This is a mock implementation - in production you'd integrate with real weather APIs
  */
 contract WeatherOracle is IDataOracle, Ownable {
+        struct WeatherData {
+        string condition;
+        int256 temperature;
+        uint256 timestamp;
+        bool isValid;
+    }
+    
     constructor() Ownable(msg.sender) {
         // Initialize with default weather
         currentWeather = WeatherData({condition: "sunny", temperature: 22, timestamp: block.timestamp, isValid: true});
