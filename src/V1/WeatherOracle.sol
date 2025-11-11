@@ -17,6 +17,9 @@ contract WeatherOracle is IDataOracle, Ownable {
         uint256 timestamp;
         bool isValid;
     }
+
+        // Current weather data
+    WeatherData public currentWeather;
     
     constructor() Ownable(msg.sender) {
         // Initialize with default weather
