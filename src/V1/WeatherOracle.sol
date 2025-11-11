@@ -11,19 +11,19 @@ import "../interfaces/IDataOracle.sol";
  * This is a mock implementation - in production you'd integrate with real weather APIs
  */
 contract WeatherOracle is IDataOracle, Ownable {
-        struct WeatherData {
+    struct WeatherData {
         string condition;
         int256 temperature;
         uint256 timestamp;
         bool isValid;
     }
 
-        // Current weather data
+    // Current weather data
     WeatherData public currentWeather;
 
-        // Authorized updaters (could be Chainlink nodes, API services, etc.)
+    // Authorized updaters (could be Chainlink nodes, API services, etc.)
     mapping(address => bool) public authorizedUpdaters;
-    
+
     constructor() Ownable(msg.sender) {
         // Initialize with default weather
         currentWeather = WeatherData({condition: "sunny", temperature: 22, timestamp: block.timestamp, isValid: true});
