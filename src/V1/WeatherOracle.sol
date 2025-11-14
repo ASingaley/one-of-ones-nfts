@@ -24,6 +24,21 @@ contract WeatherOracle is IDataOracle, Ownable {
     // Authorized updaters (could be Chainlink nodes, API services, etc.)
     mapping(address => bool) public authorizedUpdaters;
 
+    // Weather conditions mapping
+    string[] public weatherConditions = ["sunny", "cloudy", "rainy", "stormy", "snowy", "foggy"];
+
+    // Events
+    event WeatherUpdated(string condition, int256 temperature, uint256 timestamp);
+    event UpdaterAuthorized(address indexed updater, bool authorized);
+
+    // Constants
+    uint256 public constant STALE_DATA_THRESHOLD = 4 hours;
+
+    modifier onlyAuthorizedUpdater() {
+        require(authorizedUpdaters[msg.sender] || msg.sender == owner(), "Not authorized updater");
+        _;
+    }
+
     constructor() Ownable(msg.sender) {
         // Initialize with default weather
         currentWeather = WeatherData({condition: "sunny", temperature: 22, timestamp: block.timestamp, isValid: true});
