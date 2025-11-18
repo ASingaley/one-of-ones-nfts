@@ -59,4 +59,16 @@ contract WeatherOracle is Ownable {
 
         emit WeatherUpdated(condition, temperature, block.timestamp);
     }
+
+        /**
+     * @dev Check if weather condition is valid
+     */
+    function _isValidWeatherCondition(string memory condition) internal view returns (bool) {
+        for (uint256 i = 0; i < weatherConditions.length; i++) {
+            if (keccak256(abi.encodePacked(weatherConditions[i])) == keccak256(abi.encodePacked(condition))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
