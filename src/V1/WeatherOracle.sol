@@ -46,4 +46,17 @@ contract WeatherOracle is Ownable {
         // Authorize owner as updater
         authorizedUpdaters[msg.sender] = true;
     }
+
+        /**
+     * @dev Update weather data
+     */
+    function updateWeather(string calldata condition, int256 temperature) external onlyAuthorizedUpdater {
+        require(bytes(condition).length > 0, "Invalid condition");
+        require(_isValidWeatherCondition(condition), "Unknown weather condition");
+
+        currentWeather =
+            WeatherData({condition: condition, temperature: temperature, timestamp: block.timestamp, isValid: true});
+
+        emit WeatherUpdated(condition, temperature, block.timestamp);
+    }
 }
