@@ -47,7 +47,7 @@ contract WeatherOracle is Ownable {
         authorizedUpdaters[msg.sender] = true;
     }
 
-        /**
+    /**
      * @dev Update weather data
      */
     function updateWeather(string calldata condition, int256 temperature) external onlyAuthorizedUpdater {
@@ -60,7 +60,7 @@ contract WeatherOracle is Ownable {
         emit WeatherUpdated(condition, temperature, block.timestamp);
     }
 
-        /**
+    /**
      * @dev Check if weather condition is valid
      */
     function _isValidWeatherCondition(string memory condition) internal view returns (bool) {
