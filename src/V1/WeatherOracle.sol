@@ -60,7 +60,7 @@ contract WeatherOracle is Ownable {
         emit WeatherUpdated(condition, temperature, block.timestamp);
     }
 
-        /**
+    /**
      * @dev Get current weather data (implements IDataOracle)
      */
     function getData() external view returns (string memory) {
