@@ -70,7 +70,7 @@ contract WeatherOracle is Ownable {
         return currentWeather.condition;
     }
 
-        /**
+    /**
      * @dev Get detailed weather data
      */
     function getDetailedWeatherData() external view returns (WeatherData memory) {
@@ -108,7 +108,7 @@ contract WeatherOracle is Ownable {
         return false;
     }
 
-        /**
+    /**
      * @dev Authorize/unauthorize updaters
      */
     function setAuthorizedUpdater(address updater, bool authorized) external onlyOwner {
