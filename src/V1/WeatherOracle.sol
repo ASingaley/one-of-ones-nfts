@@ -95,7 +95,7 @@ contract WeatherOracle is Ownable {
 
         emit WeatherUpdated(condition, temperature, block.timestamp);
     }
-    
+
     /**
      * @dev Check if weather condition is valid
      */
@@ -106,5 +106,13 @@ contract WeatherOracle is Ownable {
             }
         }
         return false;
+    }
+
+        /**
+     * @dev Authorize/unauthorize updaters
+     */
+    function setAuthorizedUpdater(address updater, bool authorized) external onlyOwner {
+        authorizedUpdaters[updater] = authorized;
+        emit UpdaterAuthorized(updater, authorized);
     }
 }
