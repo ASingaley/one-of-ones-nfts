@@ -70,6 +70,13 @@ contract WeatherOracle is Ownable {
         return currentWeather.condition;
     }
 
+        /**
+     * @dev Get detailed weather data
+     */
+    function getDetailedWeatherData() external view returns (WeatherData memory) {
+        return currentWeather;
+    }
+
     /**
      * @dev Check if weather condition is valid
      */
