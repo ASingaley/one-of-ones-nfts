@@ -78,6 +78,25 @@ contract WeatherOracle is Ownable {
     }
 
     /**
+     * @dev Generate pseudo-random weather (for demo purposes)
+     */
+    function generateRandomWeather() external onlyAuthorizedUpdater {
+        uint256 randomIndex = uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, msg.sender)))
+            % weatherConditions.length;
+
+        string memory condition = weatherConditions[randomIndex];
+
+        // Generate random temperature between -10 and 35 Celsius
+        int256 temperature =
+            int256((uint256(keccak256(abi.encodePacked(block.timestamp + 1, block.difficulty))) % 46)) - 10;
+
+        currentWeather =
+            WeatherData({condition: condition, temperature: temperature, timestamp: block.timestamp, isValid: true});
+
+        emit WeatherUpdated(condition, temperature, block.timestamp);
+    }
+    
+    /**
      * @dev Check if weather condition is valid
      */
     function _isValidWeatherCondition(string memory condition) internal view returns (bool) {
