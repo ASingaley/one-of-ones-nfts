@@ -115,4 +115,11 @@ contract WeatherOracle is Ownable {
         authorizedUpdaters[updater] = authorized;
         emit UpdaterAuthorized(updater, authorized);
     }
+
+        /**
+     * @dev Add new weather condition
+     */
+    function addWeatherCondition(string calldata condition) external onlyOwner {
+        weatherConditions.push(condition);
+    }
 }
