@@ -122,4 +122,11 @@ contract WeatherOracle is Ownable {
     function addWeatherCondition(string calldata condition) external onlyOwner {
         weatherConditions.push(condition);
     }
+
+        /**
+     * @dev Check if data is stale
+     */
+    function isDataStale() external view returns (bool) {
+        return block.timestamp > currentWeather.timestamp + STALE_DATA_THRESHOLD;
+    }
 }
