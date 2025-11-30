@@ -12,7 +12,7 @@ contract TestOneOfOneNFTs is ERC721 {
     using Strings for uint256;
 
     uint256 private _tokenIdCounter;
-    uint256 private version = 14;
+    uint256 private version = 17;
 
     // Simplified NFT State
     struct NFTState {
