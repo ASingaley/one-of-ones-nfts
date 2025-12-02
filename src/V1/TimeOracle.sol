@@ -16,4 +16,17 @@ contract TimeOracle is IDataOracle, Ownable {
         constructor() {
         _initializeTimeZones();
     }
+
+        /**
+     * @dev Initialize common time zones
+     */
+    function _initializeTimeZones() internal {
+        timeZones["UTC"] = 0;
+        timeZones["EST"] = -5;
+        timeZones["PST"] = -8;
+        timeZones["GMT"] = 0;
+        timeZones["JST"] = 9;
+        timeZones["AEST"] = 10;
+        timeZones["CET"] = 1;
+    }
 }
