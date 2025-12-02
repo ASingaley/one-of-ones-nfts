@@ -144,4 +144,8 @@ contract WeatherOracle is Ownable {
         require(index < weatherConditions.length, "Index out of bounds");
         return weatherConditions[index];
     }
+
+        function getWeatherConditionsCount() external view returns (uint256) {
+        return weatherConditions.length;
+    }
 }
