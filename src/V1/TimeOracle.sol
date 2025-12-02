@@ -29,4 +29,11 @@ contract TimeOracle is IDataOracle, Ownable {
         timeZones["AEST"] = 10;
         timeZones["CET"] = 1;
     }
+
+       /**
+     * @dev Get current time data (implements IDataOracle)
+     */
+    function getData() external view override returns (string memory) {
+        return getCurrentTimeOfDay(defaultTimeZone);
+}
 }
