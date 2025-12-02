@@ -9,24 +9,24 @@ import "../interfaces/IDataOracle.sol";
  * @dev Oracle contract that provides time-based data for dynamic NFTs
  */
 contract TimeOracle is IDataOracle, Ownable {
-        // Time zones mapping (offset in hours from UTC)
+    // Time zones mapping (offset in hours from UTC)
     mapping(string => int256) public timeZones;
     string public defaultTimeZone = "UTC";
 
     // Special time periods
     mapping(string => bool) public specialPeriods;
     mapping(uint256 => string) public dateEvents; // timestamp => event name
-    
-        // Events
+
+    // Events
     event TimeZoneSet(string timezone, int256 offset);
     event SpecialPeriodSet(string period, bool isActive);
     event DateEventSet(uint256 timestamp, string eventName);
-    
-        constructor() {
+
+    constructor() {
         _initializeTimeZones();
     }
 
-        /**
+    /**
      * @dev Initialize common time zones
      */
     function _initializeTimeZones() internal {
@@ -39,12 +39,12 @@ contract TimeOracle is IDataOracle, Ownable {
         timeZones["CET"] = 1;
     }
 
-       /**
+    /**
      * @dev Get current time data (implements IDataOracle)
      */
     function getData() external view override returns (string memory) {
         return getCurrentTimeOfDay(defaultTimeZone);
-}
+    }
 
     /**
      * @dev Get current time of day for a specific timezone
@@ -53,7 +53,7 @@ contract TimeOracle is IDataOracle, Ownable {
         int256 offset = timeZones[timezone];
         uint256 adjustedTimestamp = uint256(int256(block.timestamp) + (offset * 3600));
         uint256 hour = (adjustedTimestamp / 3600) % 24;
-        
+
         if (hour >= 6 && hour < 12) return "morning";
         if (hour >= 12 && hour < 18) return "afternoon";
         if (hour >= 18 && hour < 22) return "evening";
