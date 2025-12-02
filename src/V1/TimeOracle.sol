@@ -12,4 +12,8 @@ contract TimeOracle is IDataOracle, Ownable {
         // Time zones mapping (offset in hours from UTC)
     mapping(string => int256) public timeZones;
     string public defaultTimeZone = "UTC";
+
+        constructor() {
+        _initializeTimeZones();
+    }
 }
