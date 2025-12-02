@@ -13,6 +13,10 @@ contract TimeOracle is IDataOracle, Ownable {
     mapping(string => int256) public timeZones;
     string public defaultTimeZone = "UTC";
 
+    // Special time periods
+    mapping(string => bool) public specialPeriods;
+    mapping(uint256 => string) public dateEvents; // timestamp => event name
+    
         constructor() {
         _initializeTimeZones();
     }
