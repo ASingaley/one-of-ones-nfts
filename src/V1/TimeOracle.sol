@@ -45,4 +45,18 @@ contract TimeOracle is IDataOracle, Ownable {
     function getData() external view override returns (string memory) {
         return getCurrentTimeOfDay(defaultTimeZone);
 }
+
+    /**
+     * @dev Get current time of day for a specific timezone
+     */
+    function getCurrentTimeOfDay(string memory timezone) public view returns (string memory) {
+        int256 offset = timeZones[timezone];
+        uint256 adjustedTimestamp = uint256(int256(block.timestamp) + (offset * 3600));
+        uint256 hour = (adjustedTimestamp / 3600) % 24;
+        
+        if (hour >= 6 && hour < 12) return "morning";
+        if (hour >= 12 && hour < 18) return "afternoon";
+        if (hour >= 18 && hour < 22) return "evening";
+        return "night";
+    }
 }
