@@ -17,6 +17,11 @@ contract TimeOracle is IDataOracle, Ownable {
     mapping(string => bool) public specialPeriods;
     mapping(uint256 => string) public dateEvents; // timestamp => event name
     
+        // Events
+    event TimeZoneSet(string timezone, int256 offset);
+    event SpecialPeriodSet(string period, bool isActive);
+    event DateEventSet(uint256 timestamp, string eventName);
+    
         constructor() {
         _initializeTimeZones();
     }
