@@ -179,4 +179,12 @@ contract TimeOracle is IDataOracle, Ownable {
         dateEvents[dayStart] = eventName;
         emit DateEventSet(dayStart, eventName);
     }
+
+       /**
+     * @dev Remove date event (only owner)
+     */
+    function removeDateEvent(uint256 timestamp) external onlyOwner {
+        uint256 dayStart = (timestamp / 86400) * 86400;
+        delete dateEvents[dayStart];
+    }
 }
