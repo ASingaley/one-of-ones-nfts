@@ -117,4 +117,13 @@ contract TimeOracle is IDataOracle, Ownable {
         if (dayOfYear >= 266 && dayOfYear < 355) return "autumn"; // Sep 23 - Dec 20
         return "winter"; // Dec 21 - Mar 20
     }
+
+        /**
+     * @dev Calculate day of year
+     */
+    function _getDayOfYear(uint256 timestamp) internal pure returns (uint256) {
+        uint256 year = 1970 + (timestamp / 365.25 days);
+        uint256 yearStart = ((year - 1970) * 365.25 days);
+        return (timestamp - yearStart) / 1 days + 1;
+    }
 }
