@@ -119,6 +119,23 @@ contract TimeOracle is IDataOracle, Ownable {
     }
 
         /**
+     * @dev Get moon phase (simplified calculation)
+     */
+    function getMoonPhase() external view returns (string memory) {
+        // Simplified moon phase calculation
+        uint256 daysSinceNewMoon = (block.timestamp / 86400) % 29; // ~29.5 day cycle
+        
+        if (daysSinceNewMoon < 2) return "new";
+        if (daysSinceNewMoon < 7) return "waxing_crescent";
+        if (daysSinceNewMoon < 9) return "first_quarter";
+        if (daysSinceNewMoon < 14) return "waxing_gibbous";
+        if (daysSinceNewMoon < 16) return "full";
+        if (daysSinceNewMoon < 21) return "waning_gibbous";
+        if (daysSinceNewMoon < 23) return "third_quarter";
+        return "waning_crescent";
+    }
+
+        /**
      * @dev Calculate day of year
      */
     function _getDayOfYear(uint256 timestamp) internal pure returns (uint256) {
