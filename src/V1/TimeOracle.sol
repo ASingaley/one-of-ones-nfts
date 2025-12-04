@@ -39,7 +39,7 @@ contract TimeOracle is Ownable {
     }
 
     /**
-    /**
+     * /**
      * @dev Get current time data
      */
     function getData() external view returns (string memory) {
@@ -48,6 +48,7 @@ contract TimeOracle is Ownable {
     /**
      * @dev Get current time of day for a specific timezone
      */
+
     function getCurrentTimeOfDay(string memory timezone) public view returns (string memory) {
         int256 offset = timeZones[timezone];
         uint256 adjustedTimestamp = uint256(int256(block.timestamp) + (offset * 3600));
@@ -161,7 +162,7 @@ contract TimeOracle is Ownable {
         defaultTimeZone = timezone;
     }
 
-       /**
+    /**
      * @dev Set special period (only owner)
      */
     function setSpecialPeriod(string calldata period, bool isActive) external onlyOwner {
@@ -169,7 +170,7 @@ contract TimeOracle is Ownable {
         emit SpecialPeriodSet(period, isActive);
     }
 
-        /**
+    /**
      * @dev Set date event (only owner)
      */
     function setDateEvent(uint256 timestamp, string calldata eventName) external onlyOwner {
@@ -179,7 +180,7 @@ contract TimeOracle is Ownable {
         emit DateEventSet(dayStart, eventName);
     }
 
-       /**
+    /**
      * @dev Remove date event (only owner)
      */
     function removeDateEvent(uint256 timestamp) external onlyOwner {
@@ -187,14 +188,14 @@ contract TimeOracle is Ownable {
         delete dateEvents[dayStart];
     }
 
-        /**
+    /**
      * @dev Get timezone offset
      */
     function getTimeZoneOffset(string calldata timezone) external view returns (int256) {
         return timeZones[timezone];
     }
 
-        /**
+    /**
      * @dev Check if timezone exists
      */
     function timeZoneExists(string calldata timezone) external view returns (bool) {
