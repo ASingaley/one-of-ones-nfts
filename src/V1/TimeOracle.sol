@@ -104,4 +104,17 @@ contract TimeOracle is IDataOracle, Ownable {
         
         return (false, "");
     }
+
+        /**
+     * @dev Get season based on timestamp
+     */
+    function getSeason() external view returns (string memory) {
+        uint256 dayOfYear = _getDayOfYear(block.timestamp);
+        
+        // Northern hemisphere seasons (approximate)
+        if (dayOfYear >= 80 && dayOfYear < 172) return "spring"; // Mar 21 - Jun 20
+        if (dayOfYear >= 172 && dayOfYear < 266) return "summer"; // Jun 21 - Sep 22
+        if (dayOfYear >= 266 && dayOfYear < 355) return "autumn"; // Sep 23 - Dec 20
+        return "winter"; // Dec 21 - Mar 20
+    }
 }
