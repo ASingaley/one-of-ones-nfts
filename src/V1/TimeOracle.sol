@@ -187,4 +187,11 @@ contract TimeOracle is IDataOracle, Ownable {
         uint256 dayStart = (timestamp / 86400) * 86400;
         delete dateEvents[dayStart];
     }
+
+        /**
+     * @dev Get timezone offset
+     */
+    function getTimeZoneOffset(string calldata timezone) external view returns (int256) {
+        return timeZones[timezone];
+    }
 }
