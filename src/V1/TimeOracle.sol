@@ -152,4 +152,12 @@ contract TimeOracle is IDataOracle, Ownable {
         timeZones[timezone] = offsetHours;
         emit TimeZoneSet(timezone, offsetHours);
     }
+
+       /**
+     * @dev Set default timezone (only owner)
+     */
+    function setDefaultTimeZone(string calldata timezone) external onlyOwner {
+        require(timeZones[timezone] != 0 || keccak256(abi.encodePacked(timezone)) == keccak256(abi.encodePacked("UTC")), "Timezone not set");
+        defaultTimeZone = timezone;
+    }
 }
