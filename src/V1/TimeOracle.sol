@@ -143,4 +143,13 @@ contract TimeOracle is IDataOracle, Ownable {
         uint256 yearStart = ((year - 1970) * 365.25 days);
         return (timestamp - yearStart) / 1 days + 1;
     }
+
+       /**
+     * @dev Set timezone offset (only owner)
+     */
+    function setTimeZone(string calldata timezone, int256 offsetHours) external onlyOwner {
+        require(offsetHours >= -12 && offsetHours <= 14, "Invalid timezone offset");
+        timeZones[timezone] = offsetHours;
+        emit TimeZoneSet(timezone, offsetHours);
+    }
 }
