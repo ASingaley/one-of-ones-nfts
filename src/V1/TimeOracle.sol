@@ -79,4 +79,29 @@ contract TimeOracle is IDataOracle, Ownable {
         isWeekend = (dayOfWeek == 5 || dayOfWeek == 6); // Friday or Saturday
         timeOfDay = getCurrentTimeOfDay(timezone);
     }
+
+       /**
+     * @dev Check if current time is within a special period
+     */
+    function isSpecialPeriod() external view returns (bool, string memory) {
+        // Check for holidays/special dates
+        uint256 dayOfYear = _getDayOfYear(block.timestamp);
+        
+        // New Year
+        if (dayOfYear == 1) return (true, "New Year");
+        
+        // Christmas
+        if (dayOfYear == 359) return (true, "Christmas");
+        
+        // Halloween
+        if (dayOfYear == 304) return (true, "Halloween");
+        
+        // Check for set date events
+        uint256 dayStart = (block.timestamp / 86400) * 86400;
+        if (bytes(dateEvents[dayStart]).length > 0) {
+            return (true, dateEvents[dayStart]);
+        }
+        
+        return (false, "");
+    }
 }
