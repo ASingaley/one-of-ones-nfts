@@ -2,13 +2,12 @@
 pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "../interfaces/IDataOracle.sol";
 
 /**
  * @title TimeOracle
  * @dev Oracle contract that provides time-based data for dynamic NFTs
  */
-contract TimeOracle is IDataOracle, Ownable {
+contract TimeOracle is Ownable {
     // Time zones mapping (offset in hours from UTC)
     mapping(string => int256) public timeZones;
     string public defaultTimeZone = "UTC";
@@ -22,7 +21,7 @@ contract TimeOracle is IDataOracle, Ownable {
     event SpecialPeriodSet(string period, bool isActive);
     event DateEventSet(uint256 timestamp, string eventName);
 
-    constructor() {
+    constructor() Ownable(msg.sender) {
         _initializeTimeZones();
     }
 
@@ -40,12 +39,12 @@ contract TimeOracle is IDataOracle, Ownable {
     }
 
     /**
-     * @dev Get current time data (implements IDataOracle)
+    /**
+     * @dev Get current time data
      */
-    function getData() external view override returns (string memory) {
+    function getData() external view returns (string memory) {
         return getCurrentTimeOfDay(defaultTimeZone);
     }
-
     /**
      * @dev Get current time of day for a specific timezone
      */
