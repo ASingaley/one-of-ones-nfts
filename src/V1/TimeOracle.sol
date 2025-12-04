@@ -169,4 +169,14 @@ contract TimeOracle is IDataOracle, Ownable {
         specialPeriods[period] = isActive;
         emit SpecialPeriodSet(period, isActive);
     }
+
+        /**
+     * @dev Set date event (only owner)
+     */
+    function setDateEvent(uint256 timestamp, string calldata eventName) external onlyOwner {
+        // Normalize to day start
+        uint256 dayStart = (timestamp / 86400) * 86400;
+        dateEvents[dayStart] = eventName;
+        emit DateEventSet(dayStart, eventName);
+    }
 }
