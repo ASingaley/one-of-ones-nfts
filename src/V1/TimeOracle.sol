@@ -194,4 +194,11 @@ contract TimeOracle is IDataOracle, Ownable {
     function getTimeZoneOffset(string calldata timezone) external view returns (int256) {
         return timeZones[timezone];
     }
+
+        /**
+     * @dev Check if timezone exists
+     */
+    function timeZoneExists(string calldata timezone) external view returns (bool) {
+        return timeZones[timezone] != 0 || keccak256(abi.encodePacked(timezone)) == keccak256(abi.encodePacked("UTC"));
+    }
 }
