@@ -59,4 +59,24 @@ contract TimeOracle is IDataOracle, Ownable {
         if (hour >= 18 && hour < 22) return "evening";
         return "night";
     }
+
+        /**
+     * @dev Get detailed time information
+     */
+    function getDetailedTime(string memory timezone) external view returns (
+        uint256 hour,
+        uint256 minute,
+        uint256 dayOfWeek,
+        string memory timeOfDay,
+        bool isWeekend
+    ) {
+        int256 offset = timeZones[timezone];
+        uint256 adjustedTimestamp = uint256(int256(block.timestamp) + (offset * 3600));
+        
+        hour = (adjustedTimestamp / 3600) % 24;
+        minute = (adjustedTimestamp / 60) % 60;
+        dayOfWeek = ((adjustedTimestamp / 86400) + 4) % 7; // Thursday = 0
+        isWeekend = (dayOfWeek == 5 || dayOfWeek == 6); // Friday or Saturday
+        timeOfDay = getCurrentTimeOfDay(timezone);
+    }
 }
